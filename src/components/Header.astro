@@ -1,18 +1,18 @@
 ---
+
 ---
 
-<header>
+<header id="header">
   <div class="container">
     <div class="logo">
-      <h1>Dulces Delicias</h1>
-      <p class="tagline">Deléitate con nuestros dulces celestiales</p>
+      <h1>Dulces Kari's</h1>
+      <p class="tagline">Karisias al paladar</p>
     </div>
-    <nav>
+    <nav class="desktop-only">
       <ul>
         <li><a href="#" class="active">Inicio</a></li>
-        <li><a href="#">Menú</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#footer">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -28,33 +28,33 @@
     z-index: 100;
     transition: all var(--transition-medium);
   }
-  
+
   header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .logo h1 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     color: var(--color-text);
     margin: 0;
   }
-  
+
   .tagline {
     font-size: 0.9rem;
     color: var(--color-text-light);
     margin: 0;
     font-style: italic;
   }
-  
+
   nav ul {
     display: flex;
     list-style: none;
     gap: var(--space-3);
   }
-  
+
   nav a {
     color: var(--color-text);
     text-decoration: none;
@@ -63,13 +63,14 @@
     position: relative;
     padding: var(--space-1) 0;
   }
-  
-  nav a:hover, nav a.active {
+
+  nav a:hover,
+  nav a.active {
     color: var(--color-accent);
   }
-  
+
   nav a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -78,32 +79,41 @@
     background-color: var(--color-accent);
     transition: width var(--transition-medium);
   }
-  
-  nav a:hover::after, nav a.active::after {
+
+  nav a:hover::after,
+  nav a.active::after {
     width: 100%;
   }
-  
+
+  .desktop-only {
+    display: block;
+  }
+
   @media (max-width: 768px) {
     header .container {
       flex-direction: column;
       text-align: center;
     }
-    
+
     nav {
       margin-top: var(--space-2);
     }
-    
+
     nav ul {
       justify-content: center;
       gap: var(--space-2);
     }
+
+    .desktop-only {
+      display: none;
+    }
   }
-  
+
   @media (max-width: 480px) {
     nav ul {
       gap: var(--space-1);
     }
-    
+
     nav a {
       font-size: 0.9rem;
     }

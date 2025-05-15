@@ -1,21 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CatalogHeader from '../components/CatalogHeader.astro';
-import DessertGrid from '../components/DessertGrid.astro';
-import CategoryFilter from '../components/CategoryFilter.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import CatalogHeader from "../components/CatalogHeader.astro";
+import DessertGrid from "../components/DessertGrid.astro";
+import CategoryFilter from "../components/CategoryFilter.astro";
+import "../styles/global.css";
 
-const categories = [
-  'Todos',
-  'Dulces',
-  'Fitness',
-  'Coco',
-  'Chocolate'
-];
+const categories = ["Todos", "Dulces", "Fitness", "Coco", "Chocolate"];
 ---
 
-<Layout title="Dulces Delicias | Catálogo de Dulces">
-  <main>
+<Layout title="Dulces Kari's | Karisias al paladar">
+  <main id="main">
     <CatalogHeader />
     <div class="container">
       <CategoryFilter categories={categories} />
@@ -30,7 +24,7 @@ const categories = [
     min-height: 100vh;
     background-color: var(--color-background);
   }
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
