@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CatalogHeader from '../components/CatalogHeader.astro';
+import DessertGrid from '../components/DessertGrid.astro';
+import CategoryFilter from '../components/CategoryFilter.astro';
+import '../styles/global.css';
+
+const categories = [
+  'Todos',
+  'Dulces',
+  'Fitness',
+  'Coco',
+  'Chocolate'
+];
+---
+
+<Layout title="Dulces Delicias | Catálogo de Dulces">
+  <main>
+    <CatalogHeader />
+    <div class="container">
+      <CategoryFilter categories={categories} />
+      <DessertGrid />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-background);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+</style>

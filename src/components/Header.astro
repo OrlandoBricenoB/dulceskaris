@@ -1,0 +1,111 @@
+---
+---
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <h1>Dulces Delicias</h1>
+      <p class="tagline">Deléitate con nuestros dulces celestiales</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Inicio</a></li>
+        <li><a href="#">Menú</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: var(--color-primary);
+    padding: var(--space-2) 0;
+    box-shadow: 0 2px 10px rgba(160, 84, 84, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all var(--transition-medium);
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+    font-style: italic;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--space-3);
+  }
+  
+  nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+    position: relative;
+    padding: var(--space-1) 0;
+  }
+  
+  nav a:hover, nav a.active {
+    color: var(--color-accent);
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--transition-medium);
+  }
+  
+  nav a:hover::after, nav a.active::after {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    header .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    nav {
+      margin-top: var(--space-2);
+    }
+    
+    nav ul {
+      justify-content: center;
+      gap: var(--space-2);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav ul {
+      gap: var(--space-1);
+    }
+    
+    nav a {
+      font-size: 0.9rem;
+    }
+  }
+</style>

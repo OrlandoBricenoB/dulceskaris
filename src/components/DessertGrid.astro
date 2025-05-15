@@ -1,0 +1,98 @@
+---
+import DessertCard from './DessertCard.astro';
+
+const desserts = [
+  {
+    name: "Bombones de Chocolate",
+    description: "Deliciosos bombones rellenos de ganache de chocolate negro.",
+    image: "https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg",
+    price: "$6.95",
+    category: "Chocolate"
+  },
+  {
+    name: "Barras de Coco",
+    description: "Barras energéticas naturales con coco rallado y almendras.",
+    image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+    price: "$4.50",
+    category: "Coco"
+  },
+  {
+    name: "Galletas de Proteína",
+    description: "Galletas saludables altas en proteína, perfectas para después del ejercicio.",
+    image: "https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg",
+    price: "$3.95",
+    category: "Fitness"
+  },
+  {
+    name: "Trufas de Coco",
+    description: "Trufas artesanales cubiertas de coco rallado.",
+    image: "https://images.pexels.com/photos/3776947/pexels-photo-3776947.jpeg",
+    price: "$5.50",
+    category: "Coco"
+  },
+  {
+    name: "Brownies Proteicos",
+    description: "Brownies sin azúcar añadido, ricos en proteína y fibra.",
+    image: "https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg",
+    price: "$4.75",
+    category: "Fitness"
+  },
+  {
+    name: "Tableta de Chocolate",
+    description: "Chocolate artesanal 70% cacao con almendras.",
+    image: "https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg",
+    price: "$7.25",
+    category: "Chocolate"
+  },
+  {
+    name: "Caramelos de Coco",
+    description: "Dulces tradicionales de coco natural.",
+    image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+    price: "$3.25",
+    category: "Dulces"
+  },
+  {
+    name: "Barras Energéticas",
+    description: "Barras naturales con chocolate y frutos secos.",
+    image: "https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg",
+    price: "$4.25",
+    category: "Fitness"
+  }
+];
+---
+
+<div class="dessert-grid">
+  {desserts.map(dessert => (
+    <DessertCard 
+      name={dessert.name}
+      description={dessert.description}
+      image={dessert.image}
+      price={dessert.price}
+      category={dessert.category}
+    />
+  ))}
+</div>
+
+<style>
+  .dessert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  
+  @media (max-width: 768px) {
+    .dessert-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--space-3);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dessert-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+</style>

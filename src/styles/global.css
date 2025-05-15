@@ -1,0 +1,177 @@
+:root {
+  /* Main color palette */
+  --color-primary: #FFE2E2;
+  --color-primary-light: #FFF0F0;
+  --color-primary-dark: #FFCECE;
+  
+  --color-accent: #FF73BB;
+  --color-accent-light: #FF8FC9;
+  --color-accent-dark: #FF56AD;
+  
+  --color-text: #A05454;
+  --color-text-light: #C78787;
+  --color-text-lighter: #E9BCBC;
+  --color-text-dark: #874545;
+  
+  --color-background: #FFF7F7;
+  --color-white: #FFFFFF;
+  
+  /* Component-specific colors */
+  --color-card-bg: #FFFFFF;
+  --color-card-shadow: rgba(160, 84, 84, 0.1);
+  
+  /* Neutral tones */
+  --color-neutral-100: #F9F1F1;
+  --color-neutral-200: #EFE0E0;
+  --color-neutral-300: #E2C9C9;
+  --color-neutral-400: #D2B1B1;
+  --color-neutral-500: #BD9090;
+  --color-neutral-600: #A97A7A;
+  --color-neutral-700: #8E5959;
+  
+  /* Status colors */
+  --color-success: #7ABD91;
+  --color-warning: #FFCB66;
+  --color-error: #E67373;
+  
+  /* Spacing (8px system) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Global base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+  color: var(--color-text-dark);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-dark);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* Utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+
+.py-1 { padding-top: var(--space-1); padding-bottom: var(--space-1); }
+.py-2 { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+.py-3 { padding-top: var(--space-3); padding-bottom: var(--space-3); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-5 { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+
+.px-1 { padding-left: var(--space-1); padding-right: var(--space-1); }
+.px-2 { padding-left: var(--space-2); padding-right: var(--space-2); }
+.px-3 { padding-left: var(--space-3); padding-right: var(--space-3); }
+.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-5 { padding-left: var(--space-5); padding-right: var(--space-5); }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .container {
+    padding: 0 var(--space-1);
+  }
+}
